@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="font_skip">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#57A9FF</item>
+    </style>
+    <style name="font_notifi">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#00B712</item>
+    </style>
+    <style name="placeholder">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">#80000000</item>
+    </style>
+    <style name="butttonNext">
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+</resources>

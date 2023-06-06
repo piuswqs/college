@@ -17,4 +17,20 @@
     <string name="next">Далее</string>
     <string name="enter_also">Или войдите с помощью</string>
     <string name="yandex">Войти с Яндекс</string>
+
+    // registration
+    <string name="reg_Create">Создание карты \n пациента</string>
+    <string name="reg_Skip">Пропустить</string>
+    <string name="reg_InfoCard1">Без карты пациента вы не сможете заказать анализы.</string>
+    <string name="reg_InfoCard2">В картах будут храниться результаты анализов вас и ваших близких.</string>
+    <string name="reg_name">Имя</string>
+    <string name="reg_surname">Отчество</string>
+    <string name="reg_patronymic">Фамилия</string>
+    <string name="reg_birthday">Дата рождения</string>
+    <string name="reg_morf">Пол</string>
+    <string name="reg_btnCreate">Создать</string>
+
+    // registration 2/0
+    <string name="reg2_codefrom">Введите код из E-mail</string>
+    <string name="reg2_codeagain">Отправить код повторно можно будет через 0 секунд</string>
 </resources>

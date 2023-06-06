@@ -83,7 +83,7 @@
     </RadioGroup>
 
     <ImageView
-        android:src="@drawable/Illustration"
+        android:src="@drawable/illus"
         android:id="@+id/onb1Img"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

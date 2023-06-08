@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/itemLVtext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ПЦР-тест на определение РНК коронавируса стандратный"
+        android:layout_margin="10dp"
+        />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="5dp"
+            >
+            <TextView
+                android:id="@+id/itemLVdata"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2 gttrfgv"/>
+            <TextView
+                android:id="@+id/itemLVcost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ffrrf"
+                />
+        </LinearLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ADD"
+            android:layout_alignParentRight="true"
+            android:layout_margin="5dp"
+            />
+    </RelativeLayout>
+
+</LinearLayout>

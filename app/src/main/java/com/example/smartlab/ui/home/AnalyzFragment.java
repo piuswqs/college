@@ -22,13 +22,7 @@ public class AnalyzFragment extends Fragment {
 
         binding = FragmentAnalyzBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-
-        final TextView textView = binding.action;
-        analyzViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
-
-
-
     }
 
     @Override

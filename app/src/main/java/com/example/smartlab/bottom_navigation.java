@@ -27,7 +27,7 @@ public class bottom_navigation extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_analyz, R.id.navigation_result, R.id.navigation_notifications, R.id.navigation_profile)
+                R.id.navigation_analyz, R.id.navigation_result, R.id.navigation_support, R.id.navigation_profile)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_bottom_navigation);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);

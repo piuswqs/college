@@ -2,10 +2,12 @@
     <string name="app_name">SmartLab</string>
     <string name="font_skip">Пропустить</string>
 
+    <!--Titles-->
     <string name="text_analyz">Анализы</string>
     <string name="text_nf">Уведомления</string>
     <string name="text_monitor">Мониторинг</string>
 
+    <!--Descriptions-->
     <string name="descr_analyz">Экспресс сбор и получение проб</string>
     <string name="descr_nf">Вы быстро узнаете о результатах</string>
     <string name="descr_monitor">Наши врачи всезда наблюдают\nзавашими показателями здоровья</string>

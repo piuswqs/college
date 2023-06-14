@@ -106,11 +106,15 @@
 
         </HorizontalScrollView>
 
-        <com.example.smartlab.NestedListView
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/lv"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        </com.example.smartlab.NestedListView>
+            android:layout_height="match_parent"
+            android:isScrollContainer="false"
+            android:nestedScrollingEnabled="false"
+            >
+        </androidx.recyclerview.widget.RecyclerView>
 
     </LinearLayout>
 </ScrollView>

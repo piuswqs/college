@@ -22,60 +22,86 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Адрес *"/>
+        android:text="Адрес *"
+        android:layout_marginTop="30dp"
+        />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Введите ваш адрес"
         android:padding="10dp"
         android:background="@drawable/style_edittext_search"
+        android:layout_marginTop="5dp"
         />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Дата и время *"/>
+        android:text="Дата и время *"
+        android:layout_marginTop="15dp"
+        />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Выберите дату и время"
         android:padding="10dp"
         android:background="@drawable/style_edittext_search"
+        android:layout_marginTop="5dp"
         />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Кто будет сдавать анализы? *"/>
+        android:text="Кто будет сдавать анализы? *"
+        android:layout_marginTop="30dp"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint=""
         android:drawableLeft="@drawable/male"
         android:padding="10dp"
+        android:layout_marginTop="15dp"
         android:background="@drawable/style_edittext_search"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Добавить еще пациента"
+        android:layout_marginTop="10dp"
         />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Телефон *"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Телефон *"
+            android:layout_marginTop="25dp"
+            />
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint=""
         android:padding="10dp"
+        android:layout_marginTop="5dp"
         android:background="@drawable/style_edittext_search"
         />
-
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Комментарий"/>
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp"
+        >
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Комментарий"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/micro"
+            />
+    </LinearLayout>
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -83,5 +109,6 @@
         android:layout_gravity="start"
         android:gravity="start"
         android:padding="15dp"
+        android:layout_marginTop="5dp"
         android:background="@drawable/style_edittext_search"/>
 </LinearLayout>

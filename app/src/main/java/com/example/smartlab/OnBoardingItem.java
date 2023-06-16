@@ -5,6 +5,12 @@ public class OnBoardingItem {
     private String title;
     private String description;
 
+    OnBoardingItem(String title, String description, int image){
+        this.title = title;
+        this.description = description;
+        this.image = image;
+    }
+
     public int getImage() {
         return image;
     }

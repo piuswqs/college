@@ -42,4 +42,10 @@
     <string name="title_result">Результаты</string>
     <string name="title_support">Поддержка</string>
     <string name="title_profile">Профиль</string>
+
+    <string-array name="gender">
+        <item>Мужчина</item>
+        <item>Женщина</item>
+    </string-array>
+
 </resources>

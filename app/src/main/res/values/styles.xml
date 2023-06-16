@@ -43,4 +43,9 @@
         <item name="android:textSize">15sp</item>
         <item name="android:textColor">#1A6FEE</item>
     </style>
+    <style name="styleRoundedCornerButton" parent="@style/Widget.AppCompat.Button.Colored">
+        <item name="background">@drawable/button_blue_roundedcorn</item>
+        <item name="colorButtonNormal">#1A6FED</item>
+        <item name="colorControlHighlight">#1A6FED</item>
+    </style>
 </resources>

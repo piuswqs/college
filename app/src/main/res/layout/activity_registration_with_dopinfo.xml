@@ -72,6 +72,7 @@
         android:padding="10dp"
         />
     <AutoCompleteTextView
+        android:id="@+id/textGender"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/reg_morf"
@@ -87,5 +88,6 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:background="@drawable/style_button"
+        android:textColorHint="@color/white"
         />
 </LinearLayout>

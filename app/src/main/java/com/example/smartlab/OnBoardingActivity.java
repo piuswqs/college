@@ -1,11 +1,21 @@
 package com.example.smartlab;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
+import android.view.View;
+import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.viewpager.widget.ViewPager;
 
 import com.ramotion.paperonboarding.PaperOnboardingFragment;
 import com.ramotion.paperonboarding.PaperOnboardingPage;
@@ -13,31 +23,21 @@ import com.ramotion.paperonboarding.PaperOnboardingPage;
 import java.util.ArrayList;
 
 public class OnBoardingActivity extends AppCompatActivity {
-    private FragmentManager fragmentManager;
+    ArrayList<OnBoardingItem> items = new ArrayList<OnBoardingItem>();
+
+   TextView textSkip;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_onboard1);
 
-        fragmentManager = getSupportFragmentManager();
+        ViewPager pager = findViewById(R.id.page);
+        OnBoardingAdapter adapter = new OnBoardingAdapter(this);
+        pager.setAdapter(adapter);
 
-        final PaperOnboardingFragment paperOnboardingFragment = PaperOnboardingFragment.newInstance(getDataforOnboarding());
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        textSkip = findViewById(R.id.onb1TextSkip);
 
-        fragmentTransaction.commit();
-    }
 
-    private ArrayList<PaperOnboardingPage> getDataforOnboarding(){
-        PaperOnboardingPage source = new PaperOnboardingPage();
-        PaperOnboardingPage source2 = new PaperOnboardingPage();
-        PaperOnboardingPage source3 = new PaperOnboardingPage();
-
-        ArrayList<PaperOnboardingPage> elements = new ArrayList<>();
-
-        elements.add(source);
-        elements.add(source2);
-        elements.add(source3);
-        return elements;
     }
 }

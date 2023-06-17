@@ -119,7 +119,7 @@ public class CodeForEmailActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 if ((editText.getText().toString().matches("1")) && (editText2.getText().toString().matches("1")) && (editText3.getText().toString().matches("1")) && (editText4.getText().toString().matches("1"))){
-                    Intent intent = new Intent(getApplicationContext(), RegistrationActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), EnterPasswordActivity.class);
                     startActivity(intent);
                     editText.getText().clear();
                     editText2.getText().clear();

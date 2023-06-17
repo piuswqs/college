@@ -10,7 +10,7 @@
     <!--Descriptions-->
     <string name="descr_analyz">Экспресс сбор и получение проб</string>
     <string name="descr_nf">Вы быстро узнаете о результатах</string>
-    <string name="descr_monitor">Наши врачи всезда наблюдают\nзавашими показателями здоровья</string>
+    <string name="descr_monitor">Наши врачи всезда наблюдают\nза вашими показателями здоровья</string>
 
     <string name="welcome">Добро пожаловать!</string>
     <string name="descr_wel">Войдите, чтобы пользоваться функциями приложения</string>

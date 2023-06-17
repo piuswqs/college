@@ -16,7 +16,7 @@ public class ServicesAdapter extends RecyclerView.Adapter<ServicesAdapter.ViewHo
     LayoutInflater inflater;
     ArrayList<Services> services;
 
-    ServicesAdapter(Context context, ArrayList<Services> services){
+    public ServicesAdapter(Context context, ArrayList<Services> services){
         this.services = services;
         this.inflater = LayoutInflater.from(context);
     }

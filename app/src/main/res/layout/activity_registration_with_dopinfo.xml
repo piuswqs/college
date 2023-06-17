@@ -71,11 +71,11 @@
         android:layout_margin="10dp"
         android:padding="10dp"
         />
-    <AutoCompleteTextView
+    <androidx.appcompat.widget.AppCompatSpinner
         android:id="@+id/textGender"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/reg_morf"
+        android:text="@string/reg_morf"
         android:background="@drawable/reg_style_fot_edit"
         android:layout_margin="10dp"
         android:padding="10dp"

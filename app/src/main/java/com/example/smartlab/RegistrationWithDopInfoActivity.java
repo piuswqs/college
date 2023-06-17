@@ -12,19 +12,12 @@ import android.widget.TextView;
 
 public class RegistrationWithDopInfoActivity extends AppCompatActivity {
 TextView btnSkip;
-AutoCompleteTextView textGender;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration_with_dopinfo);
 
-        TextView btnSkip = findViewById(R.id.btnSkipReg);
-        textGender = findViewById(R.id.textGender);
-        String[] genders = getResources().getStringArray(R.array.gender);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.select_dialog_singlechoice, genders);
-        textGender.setAdapter(adapter);
-
-
+        btnSkip = findViewById(R.id.btnSkipReg);
 
         btnSkip.setOnClickListener(new View.OnClickListener() {
             @Override

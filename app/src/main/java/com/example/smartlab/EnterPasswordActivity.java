@@ -43,6 +43,15 @@ List<String> pas;
         rb4 = findViewById(R.id.radioButton4);
 
         txt = findViewById(R.id.someone);
+        TextView textSkip = findViewById(R.id.enpas_skip);
+        textSkip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), RegistrationWithDopInfoActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         btn1.setOnClickListener(this::OnClick);
         btn2.setOnClickListener(this::OnClick);

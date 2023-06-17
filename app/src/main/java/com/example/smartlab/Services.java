@@ -5,7 +5,7 @@ public class Services {
     public String data;
     public String price;
 
-    Services (String nameService, String data, String price){
+    public Services(String nameService, String data, String price){
         this.nameService = nameService;
         this.data = data;
         this.price = price;

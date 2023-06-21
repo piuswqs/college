@@ -10,28 +10,21 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.smartlab.R;
 import com.example.smartlab.databinding.FragmentResultBinding;
 
 public class ResultFragment extends Fragment {
+    View v;
 
-    private FragmentResultBinding binding;
+    public ResultFragment(){
+
+    }
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        ResultViewModel resultViewModel =
-                new ViewModelProvider(this).get(ResultViewModel.class);
 
-        binding = FragmentResultBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
+        v = inflater.inflate(R.layout.fragment_result, container, false);
 
-        final TextView textView = binding.textResult;
-        resultViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
-        return root;
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
+        return v;
     }
 }

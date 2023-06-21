@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:layout_margin="10dp">
+    android:layout_margin="20dp">
 
     <LinearLayout
         android:orientation="vertical"
@@ -15,6 +15,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         >
         <ImageView
+            android:id="@+id/btnBackBasket"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/back"
@@ -22,6 +23,7 @@
             />
 
         <LinearLayout
+            android:layout_marginBottom="25dp"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -29,8 +31,11 @@
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Basket"/>
+                android:text="Корзина"
+                style="@style/styleBasketTitle"
+                />
             <ImageView
+                android:id="@+id/btnDeleteAllItem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/basket"
@@ -51,11 +56,14 @@
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Summa"/>
+                android:text="Сумма"
+                style="@style/styleDescriptionTitle"
+                />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1234"
+                style="@style/styleDescriptionTitle"
                 />
 
         </LinearLayout>
@@ -70,5 +78,6 @@
         android:background="@drawable/button_blue_roundedcorn"
         android:hint="Перейти к оформлению заказа"
         android:textColorHint="@color/white"
+        android:padding="20dp"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>

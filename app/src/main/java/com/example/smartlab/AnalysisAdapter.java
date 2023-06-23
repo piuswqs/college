@@ -5,26 +5,31 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.bottomsheet.BottomSheetDialog;
+
+import org.w3c.dom.Text;
+
 import java.util.List;
 
 public class AnalysisAdapter extends RecyclerView.Adapter<AnalysisAdapter.ViewHolder> {
-    LayoutInflater inflater;
     List<Analysis> analyses;
     Context context;
 
     public interface OnItemClickLisneter {
-        void onItemClick(Analysis analysis, int position);
+        void onItemClick(int position, int cost, String text, String name);
     }
-    private OnItemClickLisneter onItemClickAdapter;
+    private AnalysisAdapter.OnItemClickLisneter onItemClickNew;
 
-    public AnalysisAdapter(List<Analysis> analyses, Context context){
+    public AnalysisAdapter(List<Analysis> analyses, Context context, OnItemClickLisneter onItemClickNew){
         this.analyses = analyses;
         this.context = context;
+        this.onItemClickNew = onItemClickNew;
     }
 
     @NonNull
@@ -40,19 +45,68 @@ public class AnalysisAdapter extends RecyclerView.Adapter<AnalysisAdapter.ViewHo
         holder.dataView.setText(analysis.getTime_result());
         holder.textView.setText(analysis.getName());
         holder.costView.setText(analysis.getPriceFormat());
+
         holder.btnAddBasket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String strBtnText = holder.btnAddBasket.getHint().toString();
-                if (strBtnText == "Добавить"){
-                    holder.btnAddBasket.setHint("Убрать");
-                }
+                Button bt=(Button) v;
+                DbHelperK dbHelperK=new DbHelperK(v.getContext());
+                if (bt.getHint().equals("Добавить")){
+                    if (onItemClickNew!=null){
+                        bt.setHint("Убрать");
+                        bt.setBackgroundResource(R.drawable.button_white_with_stroke);
+                        bt.setHintTextColor(R.color.sm_blue);
+                        dbHelperK.addNewObject(analysis.getName(), analysis.getPriceFormatInteger());
+                        onItemClickNew.onItemClick(position, analysis.getPriceFormatInteger(),String.valueOf(bt.getText()), analysis.getName());}
+                    }
+                else{
+                    if (onItemClickNew!=null){
+                        bt.setHint("Добавить");
+                        bt.setBackgroundResource(R.drawable.button_blue_roundedcorn);
+                        bt.setHintTextColor(R.color.white);
+                        dbHelperK.deleteRow(analysis.getName());
+                        onItemClickNew.onItemClick(position, analysis.getPriceFormatInteger(),String.valueOf(bt.getText()), analysis.getName());}
+                    }
             }
         });
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(context, R.style.BottomSheetDialogTheme);
 
+                DbHelperK dbHelperK=new DbHelperK(v.getContext());
+
+                View bottomSheetView = LayoutInflater.from(context)
+                        .inflate(R.layout.description_item,
+                                (LinearLayout)v.findViewById(R.id.bottomSheetDialogDescription));
+
+                TextView titleDescr = bottomSheetView.findViewById(R.id.textTitleDescription);
+                TextView textDescription = bottomSheetView.findViewById(R.id.textDescription);
+                TextView textDopInfo = bottomSheetView.findViewById(R.id.textDopInfo);
+                TextView textResult = bottomSheetView.findViewById(R.id.textResult);
+                TextView textBio = bottomSheetView.findViewById(R.id.textBio);
+
+                titleDescr.setText(analysis.getName());
+                textDescription.setText(analysis.getDescription());
+                textDopInfo.setText(analysis.getPreparation());
+                textResult.setText(analysis.getTime_result());
+                textBio.setText(analysis.getBio());
+
+                bottomSheetView.findViewById(R.id.btnAddToBasket).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dbHelperK.addNewObject(analysis.getName(), analysis.getPriceFormatInteger());
+                        onItemClickNew.onItemClick(position,  analysis.getPriceFormatInteger(),"Добавить", analysis.getName());
+                    }
+                });
+                bottomSheetView.findViewById(R.id.btnCloseBottomSheet).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        bottomSheetDialog.dismiss();
+                    }
+                });
+                bottomSheetDialog.setContentView(bottomSheetView);
+                bottomSheetDialog.show();
             }
         });
     }
@@ -73,4 +127,5 @@ public class AnalysisAdapter extends RecyclerView.Adapter<AnalysisAdapter.ViewHo
             btnAddBasket = view.findViewById(R.id.itemAddBtn);
         }
     }
+
 }

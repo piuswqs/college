@@ -18,6 +18,7 @@
         android:layout_height="wrap_content">
 
         <TextView
+            android:id="@+id/textTitleDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Клинический анализ крови с лейкоцитарной формулой"
@@ -41,6 +42,7 @@
         android:layout_marginTop="30dp"
         />
     <TextView
+        android:id="@+id/textDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Клинический анализ крови – это самое важное комплексное лабораторное исследование при обследовании человека с любым заболеванием. Изменение исследуемых показателей, как правило, происходит задолго до появления видимых симптомов болезни. "
@@ -54,6 +56,7 @@
         android:layout_marginTop="10dp"
         />
     <TextView
+        android:id="@+id/textDopInfo"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -79,6 +82,7 @@
                 android:layout_height="wrap_content"
                 android:text="Результаты через:"/>
             <TextView
+                android:id="@+id/textResult"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="1 day"
@@ -96,6 +100,7 @@
                 android:layout_height="wrap_content"
                 android:text="Биоматериал:"/>
             <TextView
+                android:id="@+id/textBio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Venoz blood"

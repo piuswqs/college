@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -30,33 +30,11 @@
             android:text="Акции и новости"
             />
 
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:scrollbarAlwaysDrawHorizontalTrack="false"
-            >
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                >
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/banner"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="10dp"
-                    />
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/banner"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginLeft="10dp"
-                    />
-            </LinearLayout>
-        </HorizontalScrollView>
+       <androidx.recyclerview.widget.RecyclerView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:id="@+id/listBanner"
+           />
 
 
         <TextView
@@ -77,43 +55,53 @@
                 android:orientation="horizontal"
                 android:layout_marginLeft="10dp"
                 >
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnPopular"
+                    android:onClick="onClick"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Популярные"
+                    android:layout_height="60dp"
+                    android:hint="Популярные"
                     android:layout_margin="5dp"
-                    android:padding="15dp"
+                    android:background="@drawable/button_blue_roundedcorn"
+                    android:textColorHint="@color/white"
                     />
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Covid"
-                    android:layout_margin="5dp"
-                    android:padding="15dp"/>
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Комплексные"
-                    android:layout_margin="5dp"
-                    android:padding="15dp"/>
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Комплексные"
-                    android:layout_margin="5dp"
-                    android:padding="15dp"/>
-            </LinearLayout>
 
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnCovid"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/button_white_roundedcorn"
+                    android:hint="Covid"
+                    android:onClick="onClick"
+                    android:textColorHint="@color/grey_text"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnComplex"
+                    android:onClick="onClick"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:hint="Комплексные"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/button_white_roundedcorn"
+                    android:textColorHint="@color/grey_text"/>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnOncolog"
+                    android:onClick="onClick"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:hint="Онкологические"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/button_white_roundedcorn"
+                    android:textColorHint="@color/grey_text"/>
+            </LinearLayout>
         </HorizontalScrollView>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/lv"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-
-            >
-        </androidx.recyclerview.widget.RecyclerView>
+        <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
     </LinearLayout>
-</ScrollView>
+
+</LinearLayout>

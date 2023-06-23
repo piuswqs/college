@@ -12,13 +12,10 @@ public interface APIInterface {
     Call<User> SignUp(@Body User user);
 
     @GET("catalog/")
-    Call<List<Analysis>> getAnalyses();
-
-    @GET("category/")
-    Call<CategoriesResult> getCategories();
+    Call<AnalysisResult> getAnalyses();
 
     @GET("news/")
-    Call<NewsResult>getNews();
+    Call<BannerResult> getNews();
 
     @POST("signin/")
     Call<Refresh> SignIn(@Body User user);}

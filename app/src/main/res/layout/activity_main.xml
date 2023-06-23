@@ -13,10 +13,22 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/bot_menu"
+        app:layout_constraintBottom_toTopOf="@+id/layout_k"
         >
     </FrameLayout>
 
+    <LinearLayout
+        android:id="@+id/layout_k"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bot_menu"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@color/white"
+        >
+    </LinearLayout>
     <com.google.android.material.bottomnavigation.BottomNavigationView
        android:id="@+id/bot_menu"
         android:layout_width="wrap_content"

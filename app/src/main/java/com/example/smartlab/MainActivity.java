@@ -5,30 +5,30 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
-import android.widget.ListView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.smartlab.databinding.ActivityMainBinding;
 import com.example.smartlab.ui.home.AnalyzFragment;
 import com.example.smartlab.ui.notifications.SupportFragment;
 import com.example.smartlab.ui.profile.ProfileFragment;
 import com.example.smartlab.ui.result.ResultFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
 
-import java.util.ArrayList;
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements AnalysisAdapter.OnItemClickLisneter{
 
     BottomNavigationView menuView;
+    TextView myButton;
+
+    PreferencesManager preferencesManager;
+    DbHelperK dbHelperK;
+
+    int price;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
 
         Window window = getWindow();
         window.setStatusBarColor(this.getResources().getColor(R.color.white));
+
+        preferencesManager=new PreferencesManager(this);
+        dbHelperK=new DbHelperK(this);
 
         menuView = findViewById(R.id.bot_menu);
         menuView.setOnNavigationItemSelectedListener(navListener);
@@ -71,5 +74,50 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frameL, fragment);
         fragmentTransaction.commit();
+    }
+
+    Boolean buttonIsCreated=false;
+
+    @Override
+    public void onItemClick(int position, int cost, String text, String name) {
+        if(!buttonIsCreated){
+            myButton= new TextView(this);
+            LinearLayout layout=findViewById(R.id.layout_k);
+            LinearLayout.LayoutParams params=new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT);
+            myButton.setLayoutParams(params);
+            myButton.setHeight(150);
+            myButton.setBackground(getDrawable(R.drawable.button_blue_roundedcorn));
+            myButton.setTextColor(getResources().getColor(R.color.white));
+            myButton.setTextSize(18);
+            myButton.setCompoundDrawablesWithIntrinsicBounds(getResources().getDrawable(R.drawable.basket_icon), null, null, null);
+            myButton.setCompoundDrawablePadding(10);
+            myButton.setAllCaps(false);
+            myButton.setGravity(Gravity.CENTER_VERTICAL);
+            layout.addView(myButton);
+            //price=preferencesManager.getSum();
+            buttonIsCreated=true;
+        }
+
+        int sum = 0;
+        if (text=="Убрать"){
+            sum = dbHelperK.Sum();
+
+        }
+        else{
+            sum = dbHelperK.Sum();
+            //dbHelperK.deleteRow(name);
+        }
+        price = dbHelperK.Sum();
+
+        myButton.setText("В корзину\t\t\t"+price + " ₽");
+        myButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                preferencesManager.setSum(price);
+                Intent intent=new Intent(getApplicationContext(), BasketActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

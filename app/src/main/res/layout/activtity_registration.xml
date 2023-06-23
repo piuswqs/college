@@ -26,6 +26,7 @@
             android:src="@drawable/hello" />
 
         <TextView
+            style="@style/styleBasketTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -36,6 +37,7 @@
 </RelativeLayout>
 
     <TextView
+        style="@style/hint15sp"
         android:id="@+id/regText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -60,6 +62,7 @@
             android:layout_marginTop="50dp"
             />
         <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editTextEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/styleedit"
@@ -76,7 +79,8 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="30dp"
-            android:text="@string/next"
+            android:hint="@string/next"
+            android:textColorHint="@color/white"
             style="@style/butttonNext"/>
     </LinearLayout>
 
@@ -98,7 +102,8 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/regBut2"
-            android:text="@string/yandex"
+            android:hint="@string/yandex"
+            android:textColorHint="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="40dp"

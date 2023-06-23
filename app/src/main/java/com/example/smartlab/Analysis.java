@@ -6,14 +6,14 @@ public class Analysis  {
 
     @SerializedName("id")
     private Integer id;
+    @SerializedName("category")
+    private Integer category;
     @SerializedName("name")
     private String name;
     @SerializedName("description")
     private String description;
     @SerializedName("price")
     private String price;
-    @SerializedName("category")
-    private String category;
     @SerializedName("time_result")
     private String time_result;
     @SerializedName("preparation")
@@ -21,12 +21,12 @@ public class Analysis  {
     @SerializedName("bio")
     private String bio;
 
-    public Analysis(int id,String name,String description, String price, String category, String time_result, String preparation, String bio) {
+    public Analysis(Integer id, Integer category, String name,String description, String price, String time_result, String preparation, String bio) {
         this.id = id;
+        this.category = category;
         this.name = name;
         this.description = description;
         this.price = price;
-        this.category = category;
         this.time_result = time_result;
         this.preparation = preparation;
         this.bio = bio;
@@ -54,6 +54,12 @@ public class Analysis  {
     public String getPrice(){
         return price;    }
 
+    public Integer getPriceFormatInteger(){
+        double priceDouble = Double.parseDouble(price);
+        int priceInt = (int) priceDouble;
+        return priceInt;
+    }
+
     public String getPriceFormat() {
         double priceDouble = Double.parseDouble(price);
         int priceInt = (int) priceDouble;
@@ -65,10 +71,15 @@ public class Analysis  {
     public void setPrice(String price) {
         this.price = price;    }
 
-    public String getCategory() {
+    public Integer getCategory() {
         return category;    }
 
-    public void setCategory(String category) {
+    public String getCategoryString(){
+        String strCategory = category.toString();
+        return strCategory;
+    }
+
+    public void setCategory(Integer category) {
         this.category = category;    }
 
     public String getTime_result() {
